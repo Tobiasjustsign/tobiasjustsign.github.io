@@ -17,9 +17,17 @@
         <h1 style="margin-left: 10px;">Tobias Tossou</h1>
       </a>
     </div>
+
+    <!-- Bouton burger pour mobile -->
+    <div class="burger" aria-label="Menu" aria-expanded="false" role="button" tabindex="0">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
     <nav aria-label="Navigation principale">
       <ul>
-        <li><a href="index.html">Accueil</a></li>
+        <li><a href="index.html" class="active" aria-current="page">Accueil</a></li>
         <li><a href="apropos.html">À propos</a></li>
         <li><a href="consulting.html">Consulting</a></li>
         <li><a href="ressources.html">Ressources</a></li>
@@ -32,7 +40,6 @@
   <main>
     <section>
       <h2>Clarté. Action. Résultat.</h2>
-
       <p>
         Il ne s’agit pas d’aller plus vite, mais de comprendre où il est pertinent d’aller.
         Aujourd’hui, plus que jamais, la gestion n’est pas un outil. C’est un langage. Une manière d’être au monde, de structurer le chaos pour y insuffler du sens.
@@ -58,6 +65,26 @@
   <footer>
     <p>#TobiasJustSign – © 2025 Tobias Tossou</p>
   </footer>
+
+  <script>
+    const burger = document.querySelector('.burger');
+    const navMenu = document.querySelector('nav ul');
+
+    burger.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+      burger.classList.toggle('open');
+      const expanded = burger.getAttribute('aria-expanded') === 'true';
+      burger.setAttribute('aria-expanded', !expanded);
+    });
+
+    // Accessibilité clavier
+    burger.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        burger.click();
+      }
+    });
+  </script>
 
 </body>
 </html>

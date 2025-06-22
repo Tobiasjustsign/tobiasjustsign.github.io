@@ -17,11 +17,19 @@
         <h1 style="margin-left: 10px;">Tobias Tossou</h1>
       </a>
     </div>
+
+    <!-- Bouton burger mobile -->
+    <div class="burger" aria-label="Menu" aria-expanded="false" role="button" tabindex="0">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
     <nav aria-label="Navigation principale">
       <ul>
         <li><a href="index.html">Accueil</a></li>
         <li><a href="apropos.html">À propos</a></li>
-        <li><a href="consulting.html">Consulting</a></li>
+        <li><a href="consulting.html" class="active" aria-current="page">Consulting</a></li>
         <li><a href="ressources.html">Ressources</a></li>
         <li><a href="engagement.html">Engagement</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -64,6 +72,25 @@
   <footer>
     <p>#TobiasJustSign – © 2025 Tobias Tossou</p>
   </footer>
+
+  <script>
+    const burger = document.querySelector('.burger');
+    const navMenu = document.querySelector('nav ul');
+
+    burger.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+      burger.classList.toggle('open');
+      const expanded = burger.getAttribute('aria-expanded') === 'true';
+      burger.setAttribute('aria-expanded', !expanded);
+    });
+
+    burger.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        burger.click();
+      }
+    });
+  </script>
 
 </body>
 </html>

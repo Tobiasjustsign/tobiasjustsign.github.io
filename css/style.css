@@ -44,6 +44,11 @@ header {
     max-width: 100%;
 }
 
+/* === NAVIGATION === */
+nav {
+    position: relative; /* nécessaire pour positionner le burger */
+}
+
 nav ul {
     list-style: none;
     display: flex;
@@ -59,8 +64,29 @@ nav ul li a {
     transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a.active {
     color: var(--blanc);
+    border-bottom: 2px solid var(--or-doux);
+}
+
+/* === BOUTON BURGER === */
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.burger div {
+    width: 30px;
+    height: 3px;
+    background-color: var(--or-doux);
+    border-radius: 2px;
+    transition: all 0.3s ease;
 }
 
 /* === MAIN === */
@@ -101,33 +127,57 @@ footer {
 @media (max-width: 768px) {
     header {
         height: auto;
-        flex-direction: column;
+        flex-direction: row; /* on garde une ligne pour logo + burger */
         padding: 10px 20px;
         align-items: center;
         text-align: center;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        padding: 10px 0;
-    }
-
-    nav ul li a {
-        font-size: 1.2rem;
-    }
-
-    section h1, section h2 {
-        font-size: 1.5rem;
-    }
-
-    section p {
-        font-size: 1rem;
+        justify-content: space-between;
     }
 
     .logo img {
         height: 50px;
+    }
+
+    /* Afficher le burger */
+    .burger {
+        display: flex;
+    }
+
+    /* Masquer le menu par défaut */
+    nav ul {
+        position: absolute;
+        top: 70px; /* juste sous le header */
+        right: 0;
+        background-color: var(--bleu-nuit);
+        flex-direction: column;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        border-top: 1px solid var(--or-doux);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    nav ul.open {
+        max-height: 300px; /* assez grand pour afficher les liens */
+    }
+
+    nav ul li {
+        margin: 15px 0;
+    }
+
+    nav ul li a {
+        font-size: 1.2rem;
+        display: block;
+        padding: 10px 20px;
+        color: var(--or-doux);
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+        color: var(--blanc);
+        background-color: var(--bourgogne);
+        border-bottom: none; /* Pour éviter double bordure sur mobile */
     }
 
     main {
@@ -142,4 +192,17 @@ footer {
     footer {
         padding: 15px;
     }
+}
+
+/* === ANIMATION DU BURGER === */
+.burger.open div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.open div:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.open div:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
 }
