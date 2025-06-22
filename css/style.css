@@ -1,153 +1,96 @@
+/* === CHARTE COULEURS TOBIAS TOSSOU === */
 :root {
     --bleu-nuit: #1A1A40;
     --or-doux: #D4AF37;
     --gris-clair: #F5F5F5;
     --bourgogne: #800020;
+    --blanc: #ffffff;
+    --noir: #000000;
 }
 
+/* === BASE === */
 * {
-    margin: 0; padding: 0; box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    background-color: var(--bleu-nuit);
-    color: var(--gris-clair);
-    font-family: 'Merriweather', serif;
+    font-family: "Merriweather", "Open Sans", sans-serif;
+    background-color: var(--gris-clair);
+    color: var(--bleu-nuit);
     line-height: 1.6;
-    min-height: 100vh;
+    padding: 0;
+    margin: 0;
 }
 
-a {
-    color: var(--or-doux);
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
+/* === HEADER === */
 header {
-    position: fixed;
-    top: 0;
-    width: 100%;
     background-color: var(--bleu-nuit);
-    border-bottom: 2px solid var(--or-doux);
+    color: var(--blanc);
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 0.8rem 2rem;
+    align-items: center;
+    padding: 20px;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
     z-index: 1000;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-}
-
 .logo img {
-    height: 50px;
-    margin-right: 1rem;
-}
-
-.logo h1 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    font-size: 1.8rem;
-    color: var(--or-doux);
+    height: 60px;
+    max-width: 100%;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-nav a {
-    font-family: 'Lora', serif;
-    font-weight: 600;
-    font-size: 1rem;
-    color: var(--gris-clair);
-    text-transform: uppercase;
+nav ul li a {
+    color: var(--or-doux);
+    text-decoration: none;
+    font-weight: bold;
+    font-family: "Lora", serif;
     transition: color 0.3s ease;
 }
 
-nav a:hover {
-    color: var(--or-doux);
+nav ul li a:hover {
+    color: var(--blanc);
 }
 
-main {
-    padding: 6rem 1rem 2rem;
-    max-width: 900px;
-    margin: 0 auto;
+/* === SECTIONS === */
+main, section {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: auto;
 }
 
-section {
-    margin-bottom: 4rem;
-}
-
-section h2 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
+section h1, section h2 {
+    font-family: "Playfair Display", serif;
     font-size: 2rem;
-    border-bottom: 3px solid var(--or-doux);
-    padding-bottom: 0.3rem;
-    margin-bottom: 1rem;
-    color: var(--or-doux);
-}
-
-.subtitle {
-    font-family: 'Lora', serif;
-    font-size: 1.1rem;
+    margin-bottom: 20px;
     color: var(--bourgogne);
-    margin-bottom: 1rem;
 }
 
-/* Bouton contact */
-.btn-contact {
-    background-color: var(--or-doux);
-    color: var(--bleu-nuit);
-    border: none;
-    padding: 0.8rem 1.5rem;
-    font-weight: 700;
-    font-family: 'Playfair Display', serif;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-    text-transform: uppercase;
-    margin-top: 1rem;
-    display: inline-block;
+section p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
 }
 
-.btn-contact:hover {
-    background-color: var(--bourgogne);
-    color: var(--gris-clair);
-}
-
-/* Footer */
+/* === FOOTER === */
 footer {
     background-color: var(--bleu-nuit);
-    color: var(--gris-clair);
+    color: var(--blanc);
     text-align: center;
-    padding: 1rem;
-    border-top: 1px solid var(--or-doux);
-    font-family: 'Lora', serif;
+    padding: 20px;
     font-size: 0.9rem;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-    header {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 0.8rem;
-        align-items: center;
-    }
-}
-/* --- RESPONSIVE DESIGN --- */
+/* === RESPONSIVE DESIGN === */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -157,32 +100,32 @@ footer {
 
     nav ul {
         flex-direction: column;
-        padding: 0;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 0;
     }
 
-    nav ul li {
-        margin: 10px 0;
+    nav ul li a {
+        font-size: 1.2rem;
     }
 
-    .logo img {
-        max-width: 120px;
-        height: auto;
-    }
-
-    body, main, section {
-        padding: 10px;
-    }
-
-    h1, h2, h3 {
+    section h1, section h2 {
         font-size: 1.5rem;
     }
 
-    p {
+    section p {
         font-size: 1rem;
     }
 
+    .logo img {
+        height: 50px;
+    }
+
+    main, section {
+        padding: 20px 10px;
+    }
+
     footer {
-        text-align: center;
-        font-size: 0.9rem;
+        padding: 15px;
     }
 }
