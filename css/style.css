@@ -129,3 +129,30 @@ footer {
         padding: 15px;
     }
 }
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--bleu-nuit);
+    height: 70px; /* fixe la hauteur */
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+main {
+    margin-top: 70px; /* espace égal à la hauteur du header */
+    padding: 20px;
+}
+
+/* Responsive pour mobile */
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        flex-direction: column;
+        padding: 10px 20px;
+    }
+    main {
+        margin-top: 0;
+    }
+}
