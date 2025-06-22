@@ -9,7 +9,6 @@
 </head>
 
 <body>
-
   <header>
     <div class="logo">
       <a href="index.html" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
@@ -18,7 +17,7 @@
       </a>
     </div>
 
-    <!-- Bouton burger mobile -->
+    <!-- Bouton burger pour mobile -->
     <div class="burger" aria-label="Menu" aria-expanded="false" role="button" tabindex="0">
       <div></div>
       <div></div>
@@ -40,29 +39,23 @@
   <main>
     <section>
       <h2>Consulting & Stratégie</h2>
-
       <p>
         Le consulting aujourd’hui ne se limite plus à l’analyse fonctionnelle ou à l’optimisation de processus. Il s’agit d’un véritable levier de transformation aligné sur les réalités systémiques du terrain.
         Le rôle du consultant n’est pas de délivrer des solutions préfabriquées, mais de catalyser les dynamiques internes par l’éclairage d’une présence stratégique extérieure.
       </p>
-
       <p>
         Dans cette logique, notre approche se veut holistique, transversale et surtout contextuelle. Car ce n’est pas dans les outils que se trouvent les réponses, mais dans la capacité à poser les bonnes questions au bon moment.
         Et cela demande plus qu’une méthode : cela exige une posture, une écoute active, une lecture fine des signaux faibles.
       </p>
-
       <p>
         Nous ne promettons pas de recettes miracles. Ce que nous offrons, c’est un espace de recul et d’intelligence collective, où la productivité n’est plus une finalité mais une résultante naturelle d’un alignement organisationnel.
       </p>
-
       <p>
         Il ne s’agit donc pas seulement de « faire mieux », mais de « penser autrement ». D’introduire une grammaire différente dans les conversations professionnelles. D’élargir les cadres. D’interroger les évidences.
       </p>
-
       <p>
         Dans un monde saturé de solutions, la rareté se trouve dans la clarté. Et c’est précisément dans cette clarté que s’inscrit notre démarche. Une clarté qui ne cherche pas à convaincre, mais à faire émerger.
       </p>
-
       <p>
         Si vous sentez qu’il est temps d’ouvrir une nouvelle page dans la lecture stratégique de votre projet, alors nous aurons, peut-être, matière à conversation.
       </p>
@@ -73,24 +66,7 @@
     <p>#TobiasJustSign – © 2025 Tobias Tossou</p>
   </footer>
 
-  <script>
-    const burger = document.querySelector('.burger');
-    const navMenu = document.querySelector('nav ul');
-
-    burger.addEventListener('click', () => {
-      navMenu.classList.toggle('open');
-      burger.classList.toggle('open');
-      const expanded = burger.getAttribute('aria-expanded') === 'true';
-      burger.setAttribute('aria-expanded', !expanded);
-    });
-
-    burger.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        burger.click();
-      }
-    });
-  </script>
-
+  <!-- Inclusion du fichier JavaScript externe pour gérer le menu -->
+  <script src="js/menu.js"></script>
 </body>
 </html>

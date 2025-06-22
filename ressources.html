@@ -9,7 +9,6 @@
 </head>
 
 <body>
-
   <header>
     <div class="logo">
       <a href="index.html" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
@@ -18,7 +17,7 @@
       </a>
     </div>
 
-    <!-- Bouton burger mobile -->
+    <!-- Bouton burger pour mobile -->
     <div class="burger" aria-label="Menu" aria-expanded="false" role="button" tabindex="0">
       <div></div>
       <div></div>
@@ -40,16 +39,13 @@
   <main>
     <section>
       <h2>Ressources et présence en ligne</h2>
-
       <p>
         Le savoir ne se limite pas à une page, ni à un format.
         Ce que je partage au fil des jours vit ailleurs, dans des espaces plus spontanés, plus mouvants, plus interactifs.
       </p>
-
       <p>
         Pour suivre mes réflexions, mes partages, mes angles inattendus sur la gestion, la productivité, ou simplement l’humain en action — rejoignez-moi là où le contenu respire au rythme du présent.
       </p>
-
       <p>
         Vous me trouverez sous le même nom sur toutes les plateformes majeures :<br />
         <strong>Tobias Tossou</strong>
@@ -61,25 +57,7 @@
     <p>#TobiasJustSign – © 2025 Tobias Tossou</p>
   </footer>
 
-  <script>
-    const burger = document.querySelector('.burger');
-    const navMenu = document.querySelector('nav ul');
-
-    burger.addEventListener('click', () => {
-      navMenu.classList.toggle('open');
-      burger.classList.toggle('open');
-      const expanded = burger.getAttribute('aria-expanded') === 'true';
-      burger.setAttribute('aria-expanded', !expanded);
-    });
-
-    // Accessibilité clavier (Enter et espace)
-    burger.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        burger.click();
-      }
-    });
-  </script>
-
+  <!-- Inclusion du fichier JavaScript externe pour gérer le menu -->
+  <script src="js/menu.js"></script>
 </body>
 </html>

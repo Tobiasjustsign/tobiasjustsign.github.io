@@ -44,7 +44,6 @@
 </head>
 
 <body>
-
   <header>
     <div class="logo">
       <a href="index.html" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
@@ -53,7 +52,7 @@
       </a>
     </div>
 
-    <!-- Bouton burger mobile -->
+    <!-- Bouton burger pour mobile -->
     <div class="burger" aria-label="Menu" aria-expanded="false" role="button" tabindex="0">
       <div></div>
       <div></div>
@@ -95,24 +94,7 @@
     <p>#TobiasJustSign – © 2025 Tobias Tossou</p>
   </footer>
 
-  <script>
-    const burger = document.querySelector('.burger');
-    const navMenu = document.querySelector('nav ul');
-
-    burger.addEventListener('click', () => {
-      navMenu.classList.toggle('open');
-      burger.classList.toggle('open');
-      const expanded = burger.getAttribute('aria-expanded') === 'true';
-      burger.setAttribute('aria-expanded', !expanded);
-    });
-
-    burger.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        burger.click();
-      }
-    });
-  </script>
-
+  <!-- Inclusion du fichier JavaScript externe pour gérer le menu -->
+  <script src="js/menu.js"></script>
 </body>
 </html>

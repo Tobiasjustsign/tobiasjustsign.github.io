@@ -1,133 +1,9 @@
-/* === CHARTE COULEURS TOBIAS TOSSOU === */
-:root {
-    --bleu-nuit: #1A1A40;
-    --or-doux: #D4AF37;
-    --gris-clair: #F5F5F5;
-    --bourgogne: #800020;
-    --blanc: #ffffff;
-    --noir: #000000;
-}
-
-/* === BASE === */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: "Merriweather", "Open Sans", sans-serif;
-    background-color: var(--gris-clair);
-    color: var(--bleu-nuit);
-    line-height: 1.6;
-    padding: 0;
-    margin: 0;
-}
-
-/* === HEADER === */
-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background-color: var(--bleu-nuit);
-    height: 70px; /* hauteur fixe */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    flex-wrap: wrap;
-    color: var(--blanc);
-}
-
-.logo img {
-    height: 60px;
-    max-width: 100%;
-}
-
-/* === NAVIGATION === */
-nav {
-    position: relative; /* nécessaire pour positionner le burger */
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-nav ul li a {
-    color: var(--or-doux);
-    text-decoration: none;
-    font-weight: bold;
-    font-family: "Lora", serif;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover,
-nav ul li a.active {
-    color: var(--blanc);
-    border-bottom: 2px solid var(--or-doux);
-}
-
-/* === BOUTON BURGER === */
-.burger {
-    display: none;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 30px;
-    height: 24px;
-    cursor: pointer;
-    z-index: 1100;
-}
-
-.burger div {
-    width: 30px;
-    height: 3px;
-    background-color: var(--or-doux);
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
-/* === MAIN === */
-main {
-    margin-top: 70px; /* espace égal à la hauteur du header pour ne pas cacher le contenu */
-    padding: 20px;
-}
-
-/* === SECTIONS === */
-section {
-    max-width: 1000px;
-    margin: auto;
-    padding: 40px 20px;
-}
-
-section h1, section h2 {
-    font-family: "Playfair Display", serif;
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: var(--bourgogne);
-}
-
-section p {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-}
-
-/* === FOOTER === */
-footer {
-    background-color: var(--bleu-nuit);
-    color: var(--blanc);
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9rem;
-}
-
 /* === RESPONSIVE DESIGN === */
 @media (max-width: 768px) {
+    /* --- Header --- */
     header {
         height: auto;
-        flex-direction: row; /* on garde une ligne pour logo + burger */
+        flex-direction: row; /* On garde une ligne pour le logo et le burger */
         padding: 10px 20px;
         align-items: center;
         text-align: center;
@@ -138,30 +14,32 @@ footer {
         height: 50px;
     }
 
-    /* Afficher le burger */
+    /* --- Affichage du burger --- */
     .burger {
         display: flex;
     }
 
-    /* Masquer le menu par défaut */
+    /* --- Menu de navigation (hidden par défaut) --- */
     nav ul {
         position: absolute;
-        top: 70px; /* juste sous le header */
+        top: 100%; /* Affiché directement sous le header, quelle que soit sa hauteur */
         right: 0;
         background-color: var(--bleu-nuit);
         flex-direction: column;
         width: 100%;
-        max-height: 0;
+        max-height: 0;  /* Masqué par défaut */
         overflow: hidden;
         transition: max-height 0.3s ease;
         border-top: 1px solid var(--or-doux);
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
+    /* Lorsque l'on ajoute la classe 'open', le menu se déploie */
     nav ul.open {
-        max-height: 300px; /* assez grand pour afficher les liens */
+        max-height: 300px; /* Ajuste cette hauteur en fonction de la taille et du nombre de liens */
     }
 
+    /* --- Style des éléments du menu --- */
     nav ul li {
         margin: 15px 0;
     }
@@ -177,11 +55,12 @@ footer {
     nav ul li a.active {
         color: var(--blanc);
         background-color: var(--bourgogne);
-        border-bottom: none; /* Pour éviter double bordure sur mobile */
+        border-bottom: none; /* Pour éviter la double bordure sur mobile */
     }
 
+    /* --- Ajustements pour le contenu principal et le footer --- */
     main {
-        margin-top: 0; /* header devient auto height donc on supprime marge */
+        margin-top: 0; /* Le header ayant une hauteur auto, on peut supprimer la marge-top */
         padding: 20px 10px;
     }
 
@@ -192,17 +71,4 @@ footer {
     footer {
         padding: 15px;
     }
-}
-
-/* === ANIMATION DU BURGER === */
-.burger.open div:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-.burger.open div:nth-child(2) {
-    opacity: 0;
-}
-
-.burger.open div:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
 }
