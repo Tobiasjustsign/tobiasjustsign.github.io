@@ -189,18 +189,25 @@ footer .licence a:hover {
         display: flex;
     }
 }
+
+/* Ceci est un commentaire CSS pour le code pour l'image engagement*/
+
 .img-engagement {
     float: left;
     max-width: 300px;
+    width: 100%;
+    height: auto;
     margin: 0 20px 20px 0;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     border: 3px solid var(--or-doux);
 }
 
-/* Pour assurer une bonne gestion du flottement */
-section::after {
-    content: "";
-    display: table;
-    clear: both;
+@media (max-width: 768px) {
+    .img-engagement {
+        float: none;
+        display: block;
+        margin: 0 auto 20px auto;
+        max-width: 90%;
+    }
 }
