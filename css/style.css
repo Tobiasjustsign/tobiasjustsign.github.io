@@ -275,22 +275,3 @@ footer .licence a:hover {
         max-width: 85vw;
     }
 }
-
-/* Ajustements header en mode paysage mobile */
-@media (max-width: 768px) and (orientation: landscape) {
-    header {
-        height: 60px; /* hauteur un peu réduite */
-        padding: 5px 20px;
-        flex-wrap: nowrap; /* éviter l’empilement */
-        align-items: center; /* bien centrer verticalement */
-    }
-
-    .logo img {
-        height: 40px; /* logo un peu plus petit */
-    }
-
-    .menu-icon {
-        width: 25px;
-        height: 20px;
-    }
-}
