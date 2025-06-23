@@ -120,6 +120,21 @@ footer {
     padding: 20px;
     font-size: 0.9rem;
 }
+footer .licence {
+    font-size: 0.8rem;
+    color: var(--gris-clair);
+    margin-top: 10px;
+}
+
+footer .licence a {
+    color: var(--or-doux);
+    text-decoration: none;
+}
+
+footer .licence a:hover {
+    color: var(--blanc);
+    text-decoration: underline;
+}
 
 /* === RESPONSIVE DESIGN === */
 @media (max-width: 768px) {
