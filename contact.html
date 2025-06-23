@@ -6,44 +6,10 @@
   <title>Contact – Tobias Tossou</title>
   <link href="https://fonts.googleapis.com/css2?family=Lora&family=Merriweather&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
-  <style>
-    /* Optionnel : Mise en forme du formulaire */
-    form {
-      background-color: var(--blanc);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      max-width: 600px;
-      margin-top: 30px;
-    }
-
-    form input, form textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      font-family: inherit;
-      border-radius: 6px;
-    }
-
-    form button {
-      background-color: var(--or-doux);
-      color: var(--bleu-nuit);
-      padding: 10px 20px;
-      border: none;
-      font-weight: bold;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    form button:hover {
-      background-color: var(--bourgogne);
-      color: var(--blanc);
-    }
-  </style>
 </head>
 
 <body>
+
   <header>
     <div class="logo">
       <a href="index.html" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
@@ -51,14 +17,6 @@
         <h1 style="margin-left: 10px;">Tobias Tossou</h1>
       </a>
     </div>
-
-    <!-- Bouton burger pour mobile -->
-    <div class="burger" aria-label="Menu" aria-expanded="false" role="button" tabindex="0">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-
     <nav aria-label="Navigation principale">
       <ul>
         <li><a href="index.html">Accueil</a></li>
@@ -66,7 +24,7 @@
         <li><a href="consulting.html">Consulting</a></li>
         <li><a href="ressources.html">Ressources</a></li>
         <li><a href="engagement.html">Engagement</a></li>
-        <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -77,16 +35,6 @@
       <p>Je suis à votre disposition pour toute question ou demande de rendez-vous.</p>
       <p>Téléphone : <a href="tel:+2290143747394">+229 01 43 74 73 94</a></p>
       <p>Email : <a href="mailto:ttossou41@gmail.com">ttossou41@gmail.com</a></p>
-
-      <!-- Optionnel : formulaire simple -->
-      <!--
-      <form action="mailto:ttossou41@gmail.com" method="post" enctype="text/plain">
-        <input type="text" name="nom" placeholder="Votre nom" required />
-        <input type="email" name="email" placeholder="Votre email" required />
-        <textarea name="message" placeholder="Votre message..." rows="5" required></textarea>
-        <button type="submit">Envoyer</button>
-      </form>
-      -->
     </section>
   </main>
 
@@ -94,7 +42,5 @@
     <p>#TobiasJustSign – © 2025 Tobias Tossou</p>
   </footer>
 
-  <!-- Inclusion du fichier JavaScript externe pour gérer le menu -->
-  <script src="js/menu.js"></script>
 </body>
 </html>
