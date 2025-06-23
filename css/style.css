@@ -214,3 +214,14 @@ footer .licence a:hover {
         height: auto;
     }
 }
+.img-contact {
+    display: block;
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    margin: 0 auto 20px auto;
+    border-radius: 50%;
+    border: 3px solid var(--or-doux);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    object-fit: cover;
+}
