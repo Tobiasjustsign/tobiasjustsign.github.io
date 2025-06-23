@@ -234,7 +234,8 @@ footer .licence a:hover {
         margin: 0 auto 20px auto;
         max-width: 85vw; /* un peu moins large pour éviter d'écraser le texte */
         height: auto;
-
+    }
+}
 
         .galerie-ressources {
   padding: 40px 20px;
@@ -271,3 +272,5 @@ footer .licence a:hover {
         margin: 0 auto 20px auto;
         max-width: 85vw; /* un peu moins large pour éviter d'écraser le texte */
         height: auto;
+}
+}
