@@ -139,27 +139,43 @@ footer .licence a:hover {
 /* === RESPONSIVE DESIGN === */
 @media (max-width: 768px) {
     header {
-        height: auto;
-        flex-direction: column;
-        padding: 10px 20px;
+        height: 70px;       /* hauteur fixe pour éviter bug positionnement */
+        flex-direction: row; /* changer de column à row */
         align-items: center;
-        text-align: center;
+        padding: 10px 20px;
+    }
+
+    .logo {
+        flex: none; /* logo reste à gauche */
+    }
+
+    /* positionner le menu toggle (hamburger) à droite */
+    .menu-icon {
+        margin-left: auto; /* pousse l'icone à droite */
+        display: flex;
     }
 
     /* Cacher le menu horizontal */
     nav ul {
         display: none;
         flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        padding: 10px 0;
-        width: 100%;
         background-color: var(--bleu-nuit);
-        margin-top: 10px;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        z-index: 999;
+        padding: 10px 0;
+        gap: 10px;
     }
 
     nav ul li a {
         font-size: 1.2rem;
+    }
+
+    /* Afficher le menu quand la checkbox est cochée */
+    .menu-toggle:checked + .menu-icon + nav ul {
+        display: flex;
     }
 
     .logo img {
@@ -177,16 +193,6 @@ footer .licence a:hover {
 
     footer {
         padding: 15px;
-    }
-
-    /* Afficher le hamburger */
-    .menu-icon {
-        display: flex;
-    }
-
-    /* Quand checkbox checked, afficher le menu */
-    .menu-toggle:checked + .menu-icon + nav ul {
-        display: flex;
     }
 }
 
@@ -214,6 +220,7 @@ footer .licence a:hover {
         height: auto;
     }
 }
+
 .img-contact {
     float: center;
     max-width: 300px;
