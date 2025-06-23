@@ -58,6 +58,31 @@
         <strong>Tobias Tossou</strong>
       </p>
     </section>
+
+    <section class="galerie-ressources">
+  <h2>Galerie</h2>
+  <div class="grid-ressources">
+    <img src="images/ressources1.jpg" alt="Ressource 1" class="lightbox-trigger">
+    <img src="images/ressources2.jpg" alt="Ressource 2" class="lightbox-trigger">
+    <img src="images/ressources3.jpg" alt="Ressource 3" class="lightbox-trigger">
+    <img src="images/ressources4.jpg" alt="Ressource 4" class="lightbox-trigger">
+    <img src="images/ressources5.jpg" alt="Ressource 5" class="lightbox-trigger">
+    <img src="images/ressources6.jpg" alt="Ressource 6" class="lightbox-trigger">
+    <img src="images/ressources7.jpg" alt="Ressource 7" class="lightbox-trigger">
+    <img src="images/ressources8.jpg" alt="Ressource 8" class="lightbox-trigger">
+    <img src="images/ressources9.jpg" alt="Ressource 9" class="lightbox-trigger">
+    <img src="images/ressources10.jpg" alt="Ressource 10" class="lightbox-trigger">
+    <img src="images/ressources11.jpg" alt="Ressource 11" class="lightbox-trigger">
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox-overlay">
+  <span id="lightbox-close">&times;</span>
+  <img id="lightbox-img" src="" alt="Image agrandie">
+</div>
+
+
   </main>
 
   <footer>
@@ -65,6 +90,33 @@
     <p>Contenu protégé – <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a></p>
 
   </footer>
+
+<script>
+  const lightboxOverlay = document.getElementById('lightbox-overlay');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxClose = document.getElementById('lightbox-close');
+  const triggers = document.querySelectorAll('.lightbox-trigger');
+
+  triggers.forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightboxOverlay.style.display = 'flex';
+    });
+  });
+
+  lightboxClose.addEventListener('click', () => {
+    lightboxOverlay.style.display = 'none';
+    lightboxImg.src = '';
+  });
+
+  lightboxOverlay.addEventListener('click', e => {
+    if (e.target === lightboxOverlay) {
+      lightboxOverlay.style.display = 'none';
+      lightboxImg.src = '';
+    }
+  });
+</script>
+
 
 </body>
 </html>
