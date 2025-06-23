@@ -248,16 +248,26 @@ footer .licence a:hover {
 }
 
 .grid-ressources img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  border: 2px solid var(--or-doux);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    float: center;
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    margin: 0 20px 20px 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 3px solid var(--or-doux);
+    object-fit: cover;
 }
 
 .grid-ressources img:hover {
   transform: scale(1.03);
 }
 
+/* Mobile */
+@media (max-width: 768px) {
+.grid-ressources img {
+        float: none;
+        display: block;
+        margin: 0 auto 20px auto;
+        max-width: 85vw; /* un peu moins large pour éviter d'écraser le texte */
+        height: auto;
