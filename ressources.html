@@ -76,13 +76,6 @@
   </div>
 </section>
 
-<!-- Lightbox -->
-<div id="lightbox-overlay">
-  <span id="lightbox-close">&times;</span>
-  <img id="lightbox-img" src="" alt="Image agrandie">
-</div>
-
-
   </main>
 
   <footer>
@@ -90,33 +83,6 @@
     <p>Contenu protégé – <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a></p>
 
   </footer>
-
-<script>
-  const lightboxOverlay = document.getElementById('lightbox-overlay');
-  const lightboxImg = document.getElementById('lightbox-img');
-  const lightboxClose = document.getElementById('lightbox-close');
-  const triggers = document.querySelectorAll('.lightbox-trigger');
-
-  triggers.forEach(img => {
-    img.addEventListener('click', () => {
-      lightboxImg.src = img.src;
-      lightboxOverlay.style.display = 'flex';
-    });
-  });
-
-  lightboxClose.addEventListener('click', () => {
-    lightboxOverlay.style.display = 'none';
-    lightboxImg.src = '';
-  });
-
-  lightboxOverlay.addEventListener('click', e => {
-    if (e.target === lightboxOverlay) {
-      lightboxOverlay.style.display = 'none';
-      lightboxImg.src = '';
-    }
-  });
-</script>
-
 
 </body>
 </html>
