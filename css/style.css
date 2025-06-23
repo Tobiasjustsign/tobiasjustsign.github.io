@@ -215,13 +215,22 @@ footer .licence a:hover {
     }
 }
 .img-contact {
-    display: block;
+    float: center;
+    max-width: 300px;
     width: 100%;
-    max-width: 220px;
     height: auto;
-    margin: 0 auto 20px auto;
-    border-radius: 50%;
-    border: 3px solid var(--or-doux);
+    margin: 0 20px 20px 0;
+    border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 3px solid var(--or-doux);
     object-fit: cover;
 }
+
+/* Mobile */
+@media (max-width: 768px) {
+    .img-contact {
+        float: none;
+        display: block;
+        margin: 0 auto 20px auto;
+        max-width: 85vw; /* un peu moins large pour éviter d'écraser le texte */
+        height: auto;
