@@ -20,8 +20,6 @@ body {
     background-color: var(--gris-clair);
     color: var(--bleu-nuit);
     line-height: 1.6;
-    padding: 0;
-    margin: 0;
 }
 
 /* === HEADER === */
@@ -30,12 +28,12 @@ header {
     top: 0;
     z-index: 1000;
     background-color: var(--bleu-nuit);
-    height: 70px; /* hauteur fixe */
+    height: 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     color: var(--blanc);
 }
 
@@ -65,12 +63,11 @@ nav ul li a:hover {
     color: var(--blanc);
 }
 
-/* === NOUVEAU : checkbox hack pour menu mobile === */
+/* === MENU MOBILE HAMBURGER === */
 .menu-toggle {
     display: none;
 }
 
-/* Hamburger menu icon (3 barres) */
 .menu-icon {
     display: none;
     flex-direction: column;
@@ -78,6 +75,7 @@ nav ul li a:hover {
     width: 30px;
     height: 25px;
     justify-content: space-between;
+    margin-left: auto;
 }
 
 .menu-icon span {
@@ -89,7 +87,7 @@ nav ul li a:hover {
 
 /* === MAIN === */
 main {
-    margin-top: 70px; /* espace égal à la hauteur du header pour ne pas cacher le contenu */
+    margin-top: 70px;
     padding: 20px;
 }
 
@@ -120,6 +118,7 @@ footer {
     padding: 20px;
     font-size: 0.9rem;
 }
+
 footer .licence {
     font-size: 0.8rem;
     color: var(--gris-clair);
@@ -139,26 +138,28 @@ footer .licence a:hover {
 /* === RESPONSIVE DESIGN === */
 @media (max-width: 768px) {
     header {
-        height: 70px;       /* hauteur fixe pour éviter bug positionnement */
-        flex-direction: row; /* changer de column à row */
+        height: 70px;
+        flex-direction: row;
         align-items: center;
         padding: 10px 20px;
     }
 
     .logo {
-        flex: none; /* logo reste à gauche */
+        flex: none;
     }
 
-    /* positionner le menu toggle (hamburger) à droite */
+    .logo img {
+        height: 50px;
+    }
+
     .menu-icon {
-        margin-left: auto; /* pousse l'icone à droite */
         display: flex;
     }
 
-    /* Cacher le menu horizontal */
     nav ul {
         display: none;
         flex-direction: column;
+        align-items: center;
         background-color: var(--bleu-nuit);
         width: 100%;
         position: absolute;
@@ -173,17 +174,12 @@ footer .licence a:hover {
         font-size: 1.2rem;
     }
 
-    /* Afficher le menu quand la checkbox est cochée */
     .menu-toggle:checked + .menu-icon + nav ul {
         display: flex;
     }
 
-    .logo img {
-        height: 50px;
-    }
-
     main {
-        margin-top: 0; /* header devient auto height donc on supprime marge */
+        margin-top: 0;
         padding: 20px 10px;
     }
 
@@ -196,8 +192,7 @@ footer .licence a:hover {
     }
 }
 
-/* Ceci est un commentaire CSS pour le code pour l'image engagement*/
-
+/* === IMAGES ENGAGEMENT === */
 .img-engagement {
     float: left;
     max-width: 300px;
@@ -210,17 +205,17 @@ footer .licence a:hover {
     object-fit: cover;
 }
 
-/* Mobile */
 @media (max-width: 768px) {
     .img-engagement {
         float: none;
         display: block;
         margin: 0 auto 20px auto;
-        max-width: 85vw; /* un peu moins large pour éviter d'écraser le texte */
+        max-width: 85vw;
         height: auto;
     }
 }
 
+/* === IMAGE CONTACT === */
 .img-contact {
     float: center;
     max-width: 300px;
@@ -233,17 +228,17 @@ footer .licence a:hover {
     object-fit: cover;
 }
 
-/* Mobile */
 @media (max-width: 768px) {
     .img-contact {
         float: none;
         display: block;
         margin: 0 auto 20px auto;
-        max-width: 85vw; /* un peu moins large pour éviter d'écraser le texte */
+        max-width: 85vw;
         height: auto;
     }
 }
 
+/* === GALERIE DE RESSOURCES === */
 .grid-ressources {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -254,7 +249,7 @@ footer .licence a:hover {
 
 .grid-ressources img {
     width: 100%;
-    max-width: 280px; /* Limite la largeur max comme pour .img-engagement */
+    max-width: 280px;
     height: auto;
     margin: 0 auto;
     display: block;
@@ -269,7 +264,6 @@ footer .licence a:hover {
     transform: scale(1.03);
 }
 
-/* Mobile */
 @media (max-width: 768px) {
     .grid-ressources img {
         max-width: 85vw;
