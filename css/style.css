@@ -39,11 +39,13 @@ header {
     color: var(--blanc);
 }
 
+/* Logo */
 .logo img {
     height: 60px;
     max-width: 100%;
 }
 
+/* Nav classique */
 nav ul {
     list-style: none;
     display: flex;
@@ -61,6 +63,28 @@ nav ul li a {
 
 nav ul li a:hover {
     color: var(--blanc);
+}
+
+/* === NOUVEAU : checkbox hack pour menu mobile === */
+.menu-toggle {
+    display: none;
+}
+
+/* Hamburger menu icon (3 barres) */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    justify-content: space-between;
+}
+
+.menu-icon span {
+    display: block;
+    height: 3px;
+    background: var(--or-doux);
+    border-radius: 3px;
 }
 
 /* === MAIN === */
@@ -107,23 +131,20 @@ footer {
         text-align: center;
     }
 
+    /* Cacher le menu horizontal */
     nav ul {
+        display: none;
         flex-direction: column;
         align-items: center;
         gap: 10px;
         padding: 10px 0;
+        width: 100%;
+        background-color: var(--bleu-nuit);
+        margin-top: 10px;
     }
 
     nav ul li a {
         font-size: 1.2rem;
-    }
-
-    section h1, section h2 {
-        font-size: 1.5rem;
-    }
-
-    section p {
-        font-size: 1rem;
     }
 
     .logo img {
@@ -141,5 +162,15 @@ footer {
 
     footer {
         padding: 15px;
+    }
+
+    /* Afficher le hamburger */
+    .menu-icon {
+        display: flex;
+    }
+
+    /* Quand checkbox checked, afficher le menu */
+    .menu-toggle:checked + .menu-icon + nav ul {
+        display: flex;
     }
 }
