@@ -269,3 +269,45 @@ footer .licence a:hover {
         max-width: 85vw;
     }
 }
+
+/* === SECTION ACCUEIL AVEC IMAGE DE FOND === */
+.hero-background {
+    background-image: url("../images/background1.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--blanc);
+    padding: 60px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hero-background h2 {
+    font-size: 2.2rem;
+    color: var(--or-doux);
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+
+.hero-background p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--blanc);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-background {
+        padding: 40px 15px;
+        background-attachment: scroll;
+    }
+
+    .hero-background h2 {
+        font-size: 1.7rem;
+    }
+
+    .hero-background p {
+        font-size: 1.05rem;
+    }
+}
